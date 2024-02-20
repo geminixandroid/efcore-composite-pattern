@@ -1,7 +1,5 @@
-﻿namespace EFGetStarted.Model
+﻿namespace EFGetStarted.Model;
+
+public class Leaf : ComponentBase
 {
-    public class Leaf: Component
-    {
-        
-    }
 }

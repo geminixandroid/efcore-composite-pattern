@@ -2,7 +2,7 @@
 using EFGetStarted;
 using EFGetStarted.Model;
 
-using var db = new MyDbContext();
+using var dbContext = new ComponentsDbContext();
 
 var tree1 = new Tree
 {
@@ -20,13 +20,14 @@ var leaf2 = new Leaf
 {
     Name = "Leaf2"
 };
+
 tree1.AddComponent(tree2);
 tree1.AddComponent(leaf1);
 tree2.AddComponent(leaf2);
 
-db.Add(tree1);
-db.SaveChanges();
+dbContext.Add(tree1);
+dbContext.SaveChanges();
 
-var treeList = db.Trees.ToList();
-var leaves = db.Leaves.ToList();
-var components = db.Components.ToList();
+var treeList = dbContext.Trees.ToList();
+var leaves = dbContext.Leaves.ToList();
+var components = dbContext.Components.ToList();

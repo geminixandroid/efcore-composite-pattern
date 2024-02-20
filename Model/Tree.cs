@@ -1,20 +1,20 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace EFGetStarted.Model
+namespace EFGetStarted.Model;
+
+public class Tree : ComponentBase
 {
-    public class Tree: Component
+    public IReadOnlyCollection<ComponentBase> Components { get; set; } = new List<ComponentBase>();
+
+    public void AddComponent(ComponentBase addedComponentBase)
     {
-        
-        public IReadOnlyCollection<Component> Components { get; set; } = new List<Component>();
-        public void AddComponent(Component addedComponent)
-        {
-            var list = Components.ToList();
-            if (!list.Contains(addedComponent))
-            {
-                list.Add(addedComponent);
-                Components = list;
-            }
-        }
+        var list = Components.ToList();
+
+        if (list.Contains(addedComponentBase)) return;
+
+        list.Add(addedComponentBase);
+
+        Components = list;
     }
 }

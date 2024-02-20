@@ -3,9 +3,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace EFGetStarted;
 
-public class MyDbContext : DbContext
+public class ComponentsDbContext : DbContext
 {
-    public MyDbContext()
+    public ComponentsDbContext()
     {
         base.Database.EnsureDeleted();
         base.Database.EnsureCreated();
@@ -15,7 +15,7 @@ public class MyDbContext : DbContext
 
     public DbSet<Leaf> Leaves { get; set; }
 
-    public DbSet<Component> Components { get; set; }
+    public DbSet<ComponentBase> Components { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder options)
     {

@@ -1,17 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace EFGetStarted.Model
+﻿namespace EFGetStarted.Model
 {
-    public abstract class Component
+    public abstract class ComponentBase
     {
-        public Component()
+        // ReSharper disable once EmptyConstructor
+        protected ComponentBase()
         {
         }
 
         public Tree ParentTree { get; set; }
          
         public int Id { get; set; }
+        
         public string Name { get; set; }
     }
 }
